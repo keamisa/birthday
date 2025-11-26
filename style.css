@@ -1,0 +1,71 @@
+body {
+    /* Đặt thẻ body ở giữa màn hình */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    
+    /* Màu nền và font chữ */
+    background-color: #f0f8ff; /* Màu xanh nhạt */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    overflow: hidden; 
+}
+
+.birthday-card {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    /* Hiệu ứng đổ bóng */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    max-width: 90%;
+    
+    /* 1. Animation: Thẻ xuất hiện từ nhỏ dần */
+    animation: scaleIn 1.5s ease-out; 
+}
+
+h1 {
+    color: #ff69b4; /* Màu hồng nóng */
+    font-size: 3em;
+    margin-bottom: 20px;
+    
+    /* 2. Animation: Hiệu ứng nhấp nháy/phát sáng cho tiêu đề */
+    animation: textGlow 2s infinite alternate; 
+}
+
+.message {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.signature {
+    font-style: italic;
+    color: #777;
+}
+
+/* Định nghĩa các hiệu ứng động (Keyframes) */
+
+/* Hiệu ứng 1: Phóng to thẻ */
+@keyframes scaleIn {
+    from {
+        transform: scale(0.5); /* Bắt đầu từ 50% kích thước */
+        opacity: 0; /* Bắt đầu từ vô hình */
+    }
+    to {
+        transform: scale(1); /* Kết thúc ở kích thước thật */
+        opacity: 1;
+    }
+}
+
+/* Hiệu ứng 2: Phát sáng chữ */
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 5px #ffc0cb, 0 0 10px #ffc0cb; /* Phát sáng nhẹ */
+    }
+    to {
+        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; /* Phát sáng mạnh hơn */
+    }
+}
